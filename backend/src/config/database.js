@@ -3,11 +3,11 @@ require('dotenv').config();
 
 // Database configuration for standalone MySQL
 const dbConfig = {
-  host: process.env.DB_HOST || 'localhost',
-  port: process.env.DB_PORT || 3306, // Explicit port for standalone MySQL
-  user: process.env.DB_USER || 'root',
-  password: process.env.DB_PASSWORD || 'password', // Update with your MySQL root password
-  database: process.env.DB_NAME || 'skywings_airlines',
+  host: process.env.Host,
+  port: process.env.Port, // Explicit port for standalone MySQL
+  user: process.env.User,
+  password: process.env.Password, // Update with your MySQL root password
+  database: process.env.Database || 'skywings_airlines',
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
@@ -47,4 +47,5 @@ module.exports = {
   query,
   queryOne
 };
+
 
