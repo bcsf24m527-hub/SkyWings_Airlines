@@ -21,11 +21,11 @@ A complete flight booking system built with Node.js, Express, MySQL, and vanilla
    - Create a `.env` file in the root directory (copy from `.env.example` if available)
    - Add your MySQL Server credentials:
    ```env
-   DB_HOST=localhost
-   DB_PORT=3306
-   DB_USER=root
-   DB_PASSWORD=your_mysql_root_password
-   DB_NAME=skywings_airlines
+   Host=localhost
+   Port=3306
+   User=root
+   Password=your_mysql_root_password
+   Database=skywings_airlines
    PORT=3000
    NODE_ENV=development
    JWT_SECRET=skywings-secret-key-change-in-production
@@ -73,33 +73,14 @@ After running `scripts/initialize_database.js` and `scripts/insert_comprehensive
 
 ### Admin Account
 - **Email:** `admin@skywings.com`
-- **Password:** `admin123`
+- **Password:** `password`
 - **Access:** Full admin dashboard, manage flights, users, bookings, aircraft, reports
 
 ### Sample User Accounts
 
 **Original Test User:**
-- **Email:** `user@skywings.com`
-- **Password:** `user123`
-
-**Additional Test Users (100 users created):**
-- **Email Pattern:** `user1@skywings.com` through `user100@skywings.com`
-- **Password Pattern:** `user1123` through `user100123`
-- Example: `user1@skywings.com` / `user1123`, `user2@skywings.com` / `user2123`, etc.
-
-**Sample User Accounts (First 10):**
-1. **John Smith** - `user1@skywings.com` / `user1123`
-2. **Jane Johnson** - `user2@skywings.com` / `user2123`
-3. **Michael Williams** - `user3@skywings.com` / `user3123`
-4. **Sarah Brown** - `user4@skywings.com` / `user4123`
-5. **David Jones** - `user5@skywings.com` / `user5123`
-6. **Emily Garcia** - `user6@skywings.com` / `user6123`
-7. **James Miller** - `user7@skywings.com` / `user7123`
-8. **Emma Davis** - `user8@skywings.com` / `user8123`
-9. **Robert Rodriguez** - `user9@skywings.com` / `user9123`
-10. **Olivia Martinez** - `user10@skywings.com` / `user10123`
-
-> **Note:** Full list of all 100 user credentials is saved in `USER_CREDENTIALS.txt` file after running the data insertion script.
+- **Email:** `user3@skywings.com`
+- **Password:** `User123`
 
 ## 📋 Features
 
@@ -122,32 +103,24 @@ After running `scripts/initialize_database.js` and `scripts/insert_comprehensive
 ## 🗂️ Project Structure
 
 ```
-WEB/
-├── server.js                 # Main server file
-├── package.json              # Dependencies
-├── .env                      # Environment variables
-├── config/
-│   └── database.js          # Database connection
-├── middleware/
-│   └── auth.js              # Authentication middleware
-├── routes/
-│   ├── auth.js              # Authentication routes
-│   ├── flights.js           # Flight routes
-│   ├── bookings.js          # Booking routes
-│   ├── checkin.js           # Check-in routes
-│   ├── users.js             # User routes
-│   └── admin.js             # Admin routes
-├── sql/
-│   └── schema.sql           # Database schema
-├── scripts/
-│   ├── initialize_database.js      # Password initialization
-│   ├── insert_comprehensive_data.js  # Insert 100+ users and bookings
-│   └── add_more_flights.js        # Add flights to reach 100+
-├── css/
-│   └── style.css            # Styles
-├── js/
-│   └── main.js              # Frontend JavaScript
-└── *.html                   # HTML pages
+SkyWings_Airlines/
+├── backend/
+│   ├── config/
+│   ├── middleware/
+│   ├── routes/
+│   ├── scripts/
+│   ├── server.js
+│   ├── .env.example
+│   └── package.json
+├── database/
+│   ├── schema.sql
+│   └── insert_data.sql
+├── frontend/
+│   ├── css/
+│   ├── js/
+│   └── *.html
+├── README.md
+└── package.json
 ```
 
 ## 📊 Database Statistics
@@ -294,8 +267,7 @@ If you encounter issues:
 
 This project is open source and available for educational purposes.
 
----
 
-**Made with ❤️ for SkyWings Airlines**
 
 **Last Updated:** 2025
+
